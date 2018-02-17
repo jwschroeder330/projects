@@ -1,0 +1,393 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww5780\viewh12900\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Exploratory Data Analysis\
+\
+(and effective visualizations)\
+\
+================================\
+\
+Consider subscribing to 538 blog\
+\
+Data Exploration: we are not always sure what we are looking for\
+\
+Do not go searching for a needle in the haystack\
+\
+Having a good question is important - you must start with a hypotheses\
+\
+Let the data lead for further questions\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+Burtin\'92s medicinal dataset\
+\
+\
+
+\b Initial questions:
+\b0 \
+Which antibiotic is most effective all around?\
+\
+Which antibiotic is most effective in specialized scenarios?\
+\
+Are certain families of bacteria more vulnerable to antibiotics? If so, which ones?\
+\
+Using an inverted scale to better visualize data (i.e. gram positive vs. gram negative)\
+\
+Misclassification of bacteria - your data might not be what you think it is.\
+\
+The proper visualizations uncover the data - \'93that\'92s funny\'94 moments that lead to great insights.\
+\
+\'93The greatest value of a picture is when it forces us to notice what we never expected to see.\'94\
+John Tukey\
+\
+Tukey - visualize as soon as possible to help gather interesting questions.\
+\
+
+\i\b The course uses seaborn to visualize data
+\i0\b0 \
+\
+Visualization Goals: Communicate (Explanatory) and Analyze (Exploratory)\
+\
+Visualizations can help with messages and storytelling\
+\
+Being able to interact with the data can help the user explore patterns (JavaScript?), especially when the visualization is complex\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+
+\b Not effective data visualization:\
+\
+
+\b0 Cluttered, crowded, weird 3-D effects\
+\
+Visualizations are here to help you decrease your cognitive load (help you see patterns without thinking too hard)\
+\
+WTF Visualizations - visual data fails\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+
+\b Effective visualizations
+\b0 \
+\
+\
+1. Have graphical integrity\
+\
+2. Keep it simple\
+\
+3. Use the right display\
+\
+4. Use color strategically\
+\
+5. Tell a story with data\
+\
+\
+\'97\'97\'97\'97\'97\'97\
+
+\b 1. Have Graphical Integrity
+\b0 \
+
+\b \
+
+\b0 Fox News Examples
+\b \
+\
+
+\b0 It looks like the taxes are increasing a lot, but this is because the y-axis start at zero\
+\
+Bar chart has to start at zero - we are looking at height, which we measure at the bottom. If you cut off the bottom, you do not get the truth.\
+\
+If you want to show minute changes, use dot plots - position instead of length\
+\
+
+\b Not starting at zero for a line plot is ok\
+
+\b0 \
+Integrity is hard to get back - don\'92t lose it!\
+\
+Most people assume that most visuals are zero-based\
+\
+
+\b Bottom Line:
+\b0  Don\'92t lie with your graphs (willingly or unwillingly) and keep it simple. Make sure you get it right, you do not want people to find problems (of have others find problems) with your data or graph.\
+\
+
+\b See \'93Edward Tufte\'94
+\b0 \
+Effective visualizations - \'93Keep it simple\'94\
+\
+\'93Maximize your data ink, and minimize total ink\'94\
+\
+Maximize the message, and remove any unnecessary decoration\
+\
+Pretty is not the objective, your objective is to communicate the data.\
+\
+\ul 3-D is generally bad\ulnone \
+\
+1. Wastes non-data pixels\
+2. Perspective distorts the data\
+\
+\
+Remove chart junk - i.e. background lines, color, frame\
+\
+I.e. use white lines to give the impression of a continuous line\
+\
+\'97\'97\'97\'97\'97\
+
+\b 2. Use the right display\
+\
+See chart:\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "http://extremepresentation.typepad.com/blog/files/choosing_a_good_chart.pdf"}}{\fldrslt 
+\b0 \cf0 http://extremepresentation.typepad.com/blog/files/choosing_a_good_chart.pdf}}
+\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+
+\b Comparisons: 
+\b0 \
+\
+Bar Chart - categorical data\
+\
+Lines are not as strong when it comes to categories\
+\
+Lines imply that the data is not separate.\
+\
+\
+
+\i\b Bars imply separate or discrete data (i.e. discrete categories). \
+\
+Lines imply that the data is not separate, or continuous.
+\i0\b0 \
+\
+See Nathan Yau blog for bar charts \
+\
+\'97\'97\'97\'97\
+\
+\
+
+\b Trends:
+\b0 \
+\
+Lines are the best choice here\
+\
+Bars create discrete data (each day of the stock market vs. continuous trading trend)\
+\
+\
+\'97\'97\'97\
+\
+\
+
+\b Proportions\
+\
+
+\b0 Pie charts\
+\
+eagerpies.com - bad pie charts\
+\
+Stacked bar graph\
+\
+
+\b Stacked Area Chart
+\b0  - hard to read (we do not start at zero!). Really poor at showing trends, good at showing proportions\
+\
+Length judgements are easier for users to make then area judgements.\
+\
+Pie chart is not as effective as a bar graph\
+\
+\
+\'97\'97\'97\
+\
+\
+
+\b Correlations:
+\b0 \
+\
+Scatter plot - visual literacy is improving over time, but these plots often require explanations\
+\
+\
+Don\'92t do 3D scatter plots\
+\
+\
+\'97\'97\'97\'97\
+\
+
+\b \
+Distributions:\
+\
+
+\b0 Histogram - choose the bin size. You must play with the bin size!\
+\
+Different bin sizes reveal different patterns\
+\
+Continuous version of a histogram is a density plot\
+\
+Density plot allows you to show the raw data\
+\
+2D of density plot is called a heatmap\
+\
+========================\
+\
+See seaboard tutorials !\
+\
+=======================\
+\
+When you start with visuals - try to come up with as many quick alternatives as possible\
+\
+We do these sketches quickly - figure out what works before you get attached. You must be able to kill your babies\
+\
+Don\'92t spend a lot of time on something that you can not use in the end. The more time you spend, the more emotionally invested you get.\
+\
+Emotional investment can equate to getting stuck.\
+\
+
+\b Important Note:
+\b0  The more familiarity you have with the data, the more you start misrepresenting things\
+\
+
+\b \'97\'97\'97\'97\
+\
+Tips from teacher:\
+\
+\
+For exciting data trends, use color, else use greyscale\
+\
+
+\b0 After looking at categorical data, you may want to know more detailed trends (where did those extra bored children come from in the study?)\
+\
+
+\b Slope Graph:
+\b0  are not that widely known. Left is the before, right is the after. The slope is the rate of change - you can use color and thickness can help reinforce the trends.\
+\
+
+\b Visualization is good for one question
+\b0 \
+\
+
+\b More than one question? 
+\b0 More than one visualization\
+\
+If you have a message, a single number may be the answer\
+\
+
+\b Slope graphs are not good for high-level insights
+\b0 \
+\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\b Put simply:
+\b0 \
+\
+\ul In terms of quantifying:\ulnone \
+\
+We are good at judging length (line, horizontal bar, bar, grouped bar, etc.)\
+\
+We are not so good at judging slope\
+\
+We are not so good at judging area\
+\
+Do not show intensity for quantitative numbers\
+\
+\
+\
+\ul In terms of categorical / qualitative / ordinal:\ulnone \
+\
+Intensity is good for ordinal (dark, grey, white)\
+\
+
+\b Color scaling is not effective for quantitative coding\
+\
+
+\b0 We do this a lot in maps, because the map takes the position away\
+\
+\
+=======================\
+\
+Most efficient to least efficient visualizations\
+\
+\ul Quantitative:\ulnone \
+Position\
+Length\
+Slope / Angle\
+Area\
+Intensity\
+Color / Shape\
+\
+\ul \
+\
+
+\b \ulnone Where each is best used
+\b0 \ul \
+\
+Quantitative:\ulnone \
+Position\
+Length\
+Slope / Angle\
+\
+\ul Ordered / Ordinal:\ulnone \
+Area\
+Intensity\
+\
+\ul Categorical\ulnone \
+Color \
+Shape\
+\
+\
+
+\b Note:
+\b0  donut charts are harder to read than pie charts because you are taking the angle away\
+\
+\
+\'97\'97\'97\'97\'97\'97\
+\
+\ul Color\ulnone \
+\
+\
+
+\b Note:
+\b0  When using color, use the right scale\
+\
+Don\'92t use color to communicate data\
+\
+People can usually only discriminate between 5-9 colors - don\'92t even think of going above 10. \
+\
+
+\b Use crayon colors
+\b0 \
+\
+If you are using ordered data, use luminance. Luminance is good for relative judgements\
+\
+
+\b Nonlinearity: 
+\b0 yellow and red get way more visual attention than other colors - this distorts your ability to understand the data.\
+\
+Greyscale color mapping is the most adequate in most cases. \
+\
+\
+
+\b - Use color to highlight
+\b0 \
+\
+
+\b - Show data in greyscale and use color to highlight
+\b0 \
+\
+\
+See: Color Brewer\
+\
+Perceptually uniform color scales for nominal or ordinal data\
+\
+Nominal: apple, oranges, bananas\
+\
+\
+\
+
+\b \
+\
+}
