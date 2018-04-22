@@ -31,5 +31,5 @@ df = df_demo.join(df_google)
 df = df[df['bank account'].isnull() == False]
 
 # send to .csv
-df.to_csv('/Users/jacobschroeder/anaconda3/projects/capstone_project/test_output/phase_one_test.csv')
+df.to_csv('/Users/jacobschroeder/anaconda3/projects/capstone_project/test_output/final_dataset.csv')
 
