@@ -112,7 +112,6 @@ pipeline.fit(X_train, y_train)
 
 model = linearsvr_param_selection(X_train, y_train, pipeline)
 
-# maybe try going straight to model.predict()? Is fitting again necessary?
 model = model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
