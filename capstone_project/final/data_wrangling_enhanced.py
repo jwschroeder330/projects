@@ -6,8 +6,6 @@ Created on Tue Apr  3 20:32:20 2018
 @author: jacobschroeder
 """
 
-""" Import Libraries """
-
 import pandas as pd
 
 
@@ -50,4 +48,4 @@ text_file = '/Users/jacobschroeder/anaconda3/projects/us.1990_2016.19ages.txt'
 
 df = ascii_parser(text_file)
 
-print(df.head())
+df.to_csv('/Users/jacobschroeder/anaconda3/projects/full_dataset_bystate.csv')
